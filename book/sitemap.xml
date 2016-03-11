@@ -9,4 +9,20 @@
     </url>
     
 
+    
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-lang-elixir/book/content/start/install-erlang/</loc>
+     <lastmod>2016-03-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://foreachsam.github.io/book-lang-elixir/book/content/start/install-elixir/</loc>
+     <lastmod>2016-03-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
 </urlset>

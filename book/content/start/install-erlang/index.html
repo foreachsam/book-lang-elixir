@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>安裝 erlang - Elixir 學習筆記</title>
+      
+      
+      
+        <link rel="canonical" href="https://foreachsam.github.io/book-lang-elixir/book/content/start/install-erlang/">
+      
+      
+        <meta name="author" content="foreachsam">
+      
+    
+    <meta property="og:url" content="https://foreachsam.github.io/book-lang-elixir/book/content/start/install-erlang/">
+    <meta property="og:title" content="Elixir 學習筆記">
+    <meta property="og:image" content="https://foreachsam.github.io/book-lang-elixir/book/content/start/install-erlang//../../../">
+    <meta name="apple-mobile-web-app-title" content="Elixir 學習筆記">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../../assets/fonts/icon.eot?52m981');
+      	src: url('../../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../../assets/stylesheets/application-b64b728552.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/palettes-05ab2406df.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Mono">
+      <style>
+        body, input {
+          font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Roboto Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class="palette-primary-purple palette-accent-light-purple">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                安裝環境 <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        安裝 erlang
+      </div>
+    </div>
+    
+    
+      
+      <div class="button button-github" role="button" aria-label="GitHub">
+        <a href="https://github.com/foreachsam/book-lang-elixir" title="@foreachsam/book-lang-elixir on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+      </div>
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>Elixir 學習筆記 </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="首頁" href="../../..">
+      首頁
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">安裝環境</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="安裝 erlang" href="./">
+      安裝 erlang
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="安裝步驟參考文章" href="#_1">
+                安裝步驟參考文章
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="目標環境" href="#_2">
+                目標環境
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="事前安裝編譯所需的套件" href="#_3">
+                事前安裝編譯所需的套件
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="安裝 git" href="#git">
+                安裝 git
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="安裝 asdf" href="#asdf">
+                安裝 asdf
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="安裝 erlang" href="#erlang_1">
+                安裝 erlang
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="觀看目前 erlang 已安裝的版本列表" href="#erlang_3">
+                觀看目前 erlang 已安裝的版本列表
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="設定 global 使用版本" href="#global">
+                設定 global 使用版本
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="安裝 elixir" href="../install-elixir/">
+      安裝 elixir
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+        </ul>
+        
+          <hr>
+          <span class="section">The author</span>
+          <ul>
+            
+            
+              
+              <li>
+                <a href="https://github.com/foreachsam/book-lang-elixir" target="_blank" title="@foreachsam/book-lang-elixir on GitHub">
+                  @foreachsam/book-lang-elixir on GitHub
+                </a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="erlang">安裝 erlang</h1>
+<h2 id="_1">安裝步驟參考文章</h2>
+<ul>
+<li>Erlang / <a href="https://www.erlang.org/downloads">downloads</a></li>
+<li>Elixir / <a href="http://elixir-lang.org/install.html">install</a></li>
+<li>Phoenix Framework / <a href="http://www.phoenixframework.org/docs/installation">installation</a></li>
+<li><a href="https://github.com/HashNuke/asdf">asdf</a></li>
+</ul>
+<h2 id="_2">目標環境</h2>
+<ul>
+<li>Xubuntu 14.04 64位元</li>
+</ul>
+<h2 id="_3">事前安裝編譯所需的套件</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ sudo apt-get install build-essential automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev</code></pre>
+
+
+<h2 id="git">安裝 git</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ sudo apt-get install git</code></pre>
+
+
+<h2 id="asdf">安裝 asdf</h2>
+<p>上面了參考文章有列了不同種的安裝方式，我選擇這裡「<a href="http://elixir-lang.org/install.html#compiling-with-version-managers">Compiling with version managers</a>」提到的「<a href="https://github.com/HashNuke/asdf">asdf</a>」。</p>
+<p>以下是參考步驟</p>
+<h3 id="clone-asdf">clone asdf</h3>
+<pre class="code"><code class="language-sh">$ git clone https://github.com/HashNuke/asdf.git ~/.asdf</code></pre>
+
+
+<h3 id="asdf-source">設定 asdf source</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">echo '# source asdf ' &gt;&gt; ~/.bashrc
+echo 'source $HOME/.asdf/asdf.sh' &gt;&gt; ~/.bashrc
+echo 'source $HOME/.asdf/completions/asdf.bash' &gt;&gt; ~/.bashrc</code></pre>
+
+
+<p>重新進入bash後</p>
+<h3 id="asdf_1">觀看 asdf 版本</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf --version</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>0.1</code></pre>
+
+
+<h3 id="adsf">觀看 adsf 使用說明</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf -h</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>version: 0.1
+
+MANAGE PLUGINS
+  asdf plugin-add &lt;name&gt; &lt;git-url&gt;     Add git repo as plugin
+  asdf plugin-list                     List installed plugins
+  asdf plugin-remove &lt;name&gt;            Remove plugin and package versions
+  asdf plugin-update &lt;name&gt;            Update plugin
+  asdf plugin-update --all             Update all plugins
+
+
+MANAGE PACKAGES
+  asdf install &lt;name&gt; &lt;version&gt;        Install a specific version of a package or,
+                                       with no arguments, install all the package
+                                       versions listed in the .tool-versions file
+  asdf uninstall &lt;name&gt; &lt;version&gt;      Remove a specific version of a package
+  asdf which &lt;name&gt;                    Display version set or being used for package
+  asdf where &lt;name&gt; &lt;version&gt;          Display install path for an installed version
+  asdf list &lt;name&gt;                     List installed versions of a package
+  asdf list-all &lt;name&gt;                 List all versions of a package
+
+
+UTILS
+  asdf reshim &lt;name&gt; &lt;version&gt;         Recreate shims for version of a package
+
+
+&quot;Late but latest&quot;
+-- Rajinikanth</code></pre>
+
+
+<h3 id="asdf-plugin">安裝 asdf plugin</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">asdf plugin-add erlang https://github.com/HashNuke/asdf-erlang.git
+asdf plugin-add elixir https://github.com/HashNuke/asdf-elixir.git
+asdf plugin-add lua https://github.com/Stratus3D/asdf-lua.git
+asdf plugin-add modejs https://github.com/HashNuke/asdf-nodejs.git
+asdf plugin-add ruby https://github.com/HashNuke/asdf-ruby.git</code></pre>
+
+
+<blockquote>
+<p>上面只要執行前面兩行就行了，其他的是順手編輯，可以參考「<a href="https://github.com/HashNuke/asdf#add-a-plugin">asdf / Add a plugin</a>」，其中有表格可以參考。</p>
+</blockquote>
+<h3 id="adsf-plugin">觀看 adsf 目前有安裝那些 plugin</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf plugin-list</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>elixir
+erlang
+lua
+nodejs
+ruby</code></pre>
+
+
+<h2 id="erlang_1">安裝 erlang</h2>
+<p>利用 asdf 安裝 erlang</p>
+<h3 id="erlang_2">觀看目前可以安裝的 erlang 有那些版本</h3>
+<pre class="code"><code class="language-sh">$ asdf list-all erlang</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>18.2.1
+18.1
+18.0
+17.5
+17.4
+17.3
+17.1
+17.0</code></pre>
+
+
+<blockquote>
+<p>上面的結果就是「<a href="https://github.com/HashNuke/asdf-erlang/blob/master/bin/list-all">~/.asdf/plugins/erlang/bin/list-all</a>」的設定</p>
+</blockquote>
+<h3 id="erlang-1821">安裝 erlang 18.2.1 這個版本</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf install erlang 18.2.1</code></pre>
+
+
+<h2 id="erlang_3">觀看目前 erlang 已安裝的版本列表</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf list erlang</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>18.2.1</code></pre>
+
+
+<h2 id="global">設定 global 使用版本</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ echo 'erlang 18.2.1' &gt;&gt; $HOME/.tool-versions</code></pre>
+
+
+<p>觀看「$HOME/.tool-versions」</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ cat $HOME/.tool-versions</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>erlang 18.2.1</code></pre>
+
+
+<p>這時候就可以執行 erl 了</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ erl</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Erlang/OTP 18 [erts-7.2.1] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+
+Eshell V7.2.1  (abort with ^G)
+1&gt;</code></pre>
+
+
+<blockquote>
+<p>「.tool-versions」，除了可以放在「$HOME」底下，當作global的設定，也可以在每個專案建立「.tool-versions」這個檔案，指定erlang要使用的版本。</p>
+</blockquote>
+          <aside class="copyright" role="note">
+            
+              Copyright (c) foreachsam &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../../.." title="首頁">
+          <span class="direction">
+            上一頁
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                首頁
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../install-elixir/" title="安裝 elixir">
+          <span class="direction">
+            下一頁
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                安裝 elixir
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div></article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../../assets/javascripts/application-a10a824a49.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+        /* General initialization */
+        ga('create', 'UA-56999876-1', 'foreachsam.github.io');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+        /* Track outbound links */
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != window.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+      </script>
+    
+  </body>
+</html>
