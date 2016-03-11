@@ -179,6 +179,28 @@
         
       
       
+        <ul>
+          
+            <li class="anchor">
+              <a title="安裝 elixir" href="#elixir_1">
+                安裝 elixir
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="觀看目前 elixir 已安裝的版本列表" href="#elixir_3">
+                觀看目前 elixir 已安裝的版本列表
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="設定 global 使用 elixir 版本" href="#global-elixir">
+                設定 global 使用 elixir 版本
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -212,6 +234,72 @@
         <div class="wrapper">
           
           <h1 id="elixir">安裝 elixir</h1>
+<h2 id="elixir_1">安裝 elixir</h2>
+<p>利用 asdf 安裝 elixir，一些準備工作，請參考上一篇「<a href="../../../book-lang-elixir/book/content/start/install-erlang/">安裝 erlang</a>」的前半段。</p>
+<h3 id="elixir_2">觀看目前可以安裝的 elixir 有那些版本</h3>
+<pre class="code"><code class="language-sh">$ asdf list-all elixir</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>1.2.2
+1.2.1
+1.2.0
+1.1.1
+1.1.0
+1.0.5
+1.0.4
+1.0.2
+1.0.1
+1.0.0</code></pre>
+
+
+<blockquote>
+<p>上面的結果就是「<a href="https://github.com/HashNuke/asdf-elixir/blob/master/bin/list-all">~/.asdf/plugins/elixir/bin/list-all</a>」的設定</p>
+</blockquote>
+<h3 id="elixir-122">安裝 elixir 1.2.2 這個版本</h3>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf install elixir 1.2.2</code></pre>
+
+
+<h2 id="elixir_3">觀看目前 elixir 已安裝的版本列表</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ asdf list elixir</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>1.2.2</code></pre>
+
+
+<h2 id="global-elixir">設定 global 使用 elixir 版本</h2>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ echo 'elixir 1.2.2' &gt;&gt; $HOME/.tool-versions</code></pre>
+
+
+<p>觀看「$HOME/.tool-versions」</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ cat $HOME/.tool-versions</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>erlang 18.2.1
+elixir 1.2.2</code></pre>
+
+
+<p>這時候就可以執行 iex 了</p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ iex</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code>Erlang/OTP 18 [erts-7.2.1] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false]
+
+Interactive Elixir (1.2.2) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt;</code></pre>
+
+
+<blockquote>
+<p>「.tool-versions」，除了可以放在「$HOME」底下，當作global的設定，也可以在每個專案建立「.tool-versions」這個檔案，指定elixir要使用的版本。</p>
+</blockquote>
           <aside class="copyright" role="note">
             
               Copyright (c) foreachsam &ndash;
