@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Elixir \u5b78\u7fd2\u7b46\u8a18\n\n\n\u9019\u662f\u5b78\u7fd2\u300c\nElixir\n\u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002\n\n\n\u53e6\u5916\u59ca\u59b9\u7bc7\u300c\nErlang \u5b78\u7fd2\u7b46\u8a18\n\u300d\u3002\n\n\n\u5b78\u7fd2\u5c0e\u8b80\n\n\n\n\nLearning Resources\n\n\nGetting Started\n\n\nMix and OTP\n\n\nDocumentation\n\n\n\n\nGithub\n\n\n\n\nelixir-lang\n\n\nelixir-lang / \nelixir\n\n\nelixir-lang / \nelixir-lang.github.com\n\n\nelixir-lang / \ndocs\n\n\n\n\n\u5957\u4ef6\u5eab\n\n\n\n\nHex.pm",
+            "text": "Elixir \u5b78\u7fd2\u7b46\u8a18\n\n\n\u9019\u662f\u5b78\u7fd2\u300c\nElixir\n\u300d\u7684\u7c21\u55ae\u7d00\u9304\u3002\n\n\n\u53e6\u5916\u59ca\u59b9\u7bc7\u300c\nErlang \u5b78\u7fd2\u7b46\u8a18\n\u300d\u3002\n\n\n\u5b78\u7fd2\u5c0e\u8b80\n\n\n\n\nLearning Resources\n\n\nGetting Started\n\n\nMix and OTP\n\n\nDocumentation\n\n\n\n\nGithub\n\n\n\n\nelixir-lang\n\n\nelixir-lang / \nelixir\n\n\nelixir-lang / \nelixir-lang.github.com\n\n\nelixir-lang / \ndocs\n\n\n\n\n\u5957\u4ef6\u5eab\n\n\n\n\nHex.pm\n\n\n\n\n\u76f8\u95dc\u5f71\u7247\n\n\n\n\nElixir - A modern approach to programming for the Erlang VM",
             "title": "\u9996\u9801"
         },
         {
@@ -24,6 +24,11 @@
             "location": "/#_2",
             "text": "Hex.pm",
             "title": "\u5957\u4ef6\u5eab"
+        },
+        {
+            "location": "/#_3",
+            "text": "Elixir - A modern approach to programming for the Erlang VM",
+            "title": "\u76f8\u95dc\u5f71\u7247"
         },
         {
             "location": "/content/start/install-erlang/",
