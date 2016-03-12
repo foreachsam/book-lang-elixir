@@ -238,6 +238,12 @@
               </a>
             </li>
           
+            <li class="anchor">
+              <a title="source code" href="#source-code">
+                source code
+              </a>
+            </li>
+          
         </ul>
       
     
@@ -368,6 +374,124 @@ BSD                                                 April 10, 2015              
 ** Options marked with (*) can be given more than once
 ** Options given after the .exs file or -- are passed down to the executed code
 ** Options can be passed to the Erlang runtime using ELIXIR_ERL_OPTIONS or --erl</code></pre>
+
+
+<h2 id="source-code">source code</h2>
+<p><a href="https://github.com/elixir-lang/elixir/blob/v1.2/bin/elixir">elixir</a></p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ cat ~/.asdf/installs/elixir/1.2.2/bin/elixir</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code class="language-sh linenums">#!/bin/sh
+if [ $# -eq 0 ] || [ &quot;$1&quot; = &quot;--help&quot; ] || [ &quot;$1&quot; = &quot;-h&quot; ]; then
+  echo &quot;Usage: `basename $0` [options] [.exs file] [data]
+
+  -v                Prints version and exits
+  -e \&quot;command\&quot;      Evaluates the given command (*)
+  -r \&quot;file\&quot;         Requires the given files/patterns (*)
+  -S \&quot;script\&quot;       Finds and executes the given script
+  -pr \&quot;file\&quot;        Requires the given files/patterns in parallel (*)
+  -pa \&quot;path\&quot;        Prepends the given path to Erlang code path (*)
+  -pz \&quot;path\&quot;        Appends the given path to Erlang code path (*)
+  --app \&quot;app\&quot;       Start the given app and its dependencies (*)
+  --erl \&quot;switches\&quot;  Switches to be passed down to Erlang (*)
+  --name \&quot;name\&quot;     Makes and assigns a name to the distributed node
+  --sname \&quot;name\&quot;    Makes and assigns a short name to the distributed node
+  --cookie \&quot;cookie\&quot; Sets a cookie for this distributed node
+  --hidden          Makes a hidden node
+  --detached        Starts the Erlang VM detached from console
+  --werl            Uses Erlang's Windows shell GUI (Windows only)
+  --no-halt         Does not halt the Erlang VM after execution
+
+** Options marked with (*) can be given more than once
+** Options given after the .exs file or -- are passed down to the executed code
+** Options can be passed to the Erlang runtime using ELIXIR_ERL_OPTIONS or --erl&quot; &gt;&amp;2
+  exit 1
+fi
+
+readlink_f () {
+  cd &quot;$(dirname &quot;$1&quot;)&quot; &gt; /dev/null
+  filename=&quot;$(basename &quot;$1&quot;)&quot;
+  if [ -h &quot;$filename&quot; ]; then
+    readlink_f &quot;$(readlink &quot;$filename&quot;)&quot;
+  else
+    echo &quot;`pwd -P`/$filename&quot;
+  fi
+}
+
+MODE=&quot;elixir&quot;
+ERL_EXEC=&quot;erl&quot;
+ERL=&quot;&quot;
+I=1
+
+while [ $I -le $# ]; do
+  S=1
+  eval &quot;PEEK=\${$I}&quot;
+  case &quot;$PEEK&quot; in
+    +iex)
+        MODE=&quot;iex&quot;
+        ;;
+    +elixirc)
+        MODE=&quot;elixirc&quot;
+        ;;
+    -v|--compile|--no-halt)
+        ;;
+    -e|-r|-pr|-pa|-pz|--remsh|--app)
+        S=2
+        ;;
+    --detached|--hidden)
+        ERL=&quot;$ERL `echo $PEEK | cut -c 2-`&quot;
+        ;;
+    --cookie)
+        I=$(expr $I + 1)
+        eval &quot;VAL=\${$I}&quot;
+        ERL=&quot;$ERL -setcookie &quot;$VAL&quot;&quot;
+        ;;
+    --sname|--name)
+        I=$(expr $I + 1)
+        eval &quot;VAL=\${$I}&quot;
+        ERL=&quot;$ERL `echo $PEEK | cut -c 2-` &quot;$VAL&quot;&quot;
+        ;;
+    --erl)
+        I=$(expr $I + 1)
+        eval &quot;VAL=\${$I}&quot;
+        ERL=&quot;$ERL &quot;$VAL&quot;&quot;
+        ;;
+    --werl)
+        USE_WERL=true
+        ;;
+    *)
+        break
+        ;;
+  esac
+  I=$(expr $I + $S)
+done
+
+SELF=$(readlink_f &quot;$0&quot;)
+SCRIPT_PATH=$(dirname &quot;$SELF&quot;)
+
+if [ &quot;$OSTYPE&quot; = &quot;cygwin&quot; ]; then SCRIPT_PATH=$(cygpath -m &quot;$SCRIPT_PATH&quot;); fi
+if [ &quot;$MODE&quot; != &quot;iex&quot; ]; then ERL=&quot;-noshell -s elixir start_cli $ERL&quot;; fi
+
+# Check for terminal support
+if [ &quot;$OS&quot; != &quot;Windows_NT&quot; ]; then
+  if test -t 1 -a -t 2; then ERL=&quot;-elixir ansi_enabled true $ERL&quot;; fi
+fi
+
+if [ &quot;$OS&quot; = &quot;Windows_NT&quot; ] &amp;&amp; [ $USE_WERL ]; then
+    ERL_EXEC=&quot;werl&quot;
+fi
+
+if [ -z &quot;$ERL_PATH&quot; ]; then
+  if [ -f &quot;$SCRIPT_PATH/../releases/RELEASES&quot; ] &amp;&amp; [ -f &quot;$SCRIPT_PATH/erl&quot; ]; then
+    ERL_PATH=&quot;$SCRIPT_PATH&quot;/&quot;$ERL_EXEC&quot;
+  else
+    ERL_PATH=&quot;$ERL_EXEC&quot;
+  fi
+fi
+
+exec &quot;$ERL_PATH&quot; -pa &quot;$SCRIPT_PATH&quot;/../lib/*/ebin $ELIXIR_ERL_OPTIONS $ERL -extra &quot;$@&quot;</code></pre>
           <aside class="copyright" role="note">
             
               Copyright (c) foreachsam &ndash;

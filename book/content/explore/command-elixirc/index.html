@@ -241,6 +241,12 @@
               </a>
             </li>
           
+            <li class="anchor">
+              <a title="source code" href="#source-code">
+                source code
+              </a>
+            </li>
+          
         </ul>
       
     
@@ -365,6 +371,45 @@ BSD                                                 April 10, 2015              
 ** Options given after -- are passed down to the executed code
 ** Options can be passed to the erlang runtime using ELIXIR_ERL_OPTIONS
 ** Options can be passed to the erlang compiler using ERL_COMPILER_OPTIONS</code></pre>
+
+
+<h2 id="source-code">source code</h2>
+<p><a href="https://github.com/elixir-lang/elixir/blob/v1.2/bin/elixirc">elixirc</a></p>
+<p>執行</p>
+<pre class="code"><code class="language-sh">$ cat ~/.asdf/installs/elixir/1.2.2/bin/elixirc</code></pre>
+
+
+<p>顯示</p>
+<pre class="code"><code class="language-sh linenums">#!/bin/sh
+if [ $# -eq 0 ] || [ &quot;$1&quot; = &quot;--help&quot; ] || [ &quot;$1&quot; = &quot;-h&quot; ]; then
+  echo &quot;Usage: `basename $0` [elixir switches] [compiler switches] [.ex files]
+
+  -o               The directory to output compiled files
+  --no-docs        Do not attach documentation to compiled modules
+  --no-debug-info  Do not attach debug info to compiled modules
+  --ignore-module-conflict
+  --warnings-as-errors Treat warnings as errors and return non-zero exit code
+  --verbose        Print informational messages.
+
+** Options given after -- are passed down to the executed code
+** Options can be passed to the erlang runtime using ELIXIR_ERL_OPTIONS
+** Options can be passed to the erlang compiler using ERL_COMPILER_OPTIONS&quot; &gt;&amp;2
+  exit 1
+fi
+
+readlink_f () {
+  cd &quot;$(dirname &quot;$1&quot;)&quot; &gt; /dev/null
+  filename=&quot;$(basename &quot;$1&quot;)&quot;
+  if [ -h &quot;$filename&quot; ]; then
+    readlink_f &quot;$(readlink &quot;$filename&quot;)&quot;
+  else
+    echo &quot;`pwd -P`/$filename&quot;
+  fi
+}
+
+SELF=$(readlink_f &quot;$0&quot;)
+SCRIPT_PATH=$(dirname &quot;$SELF&quot;)
+exec &quot;$SCRIPT_PATH&quot;/elixir +elixirc &quot;$@&quot;</code></pre>
           <aside class="copyright" role="note">
             
               Copyright (c) foreachsam &ndash;
